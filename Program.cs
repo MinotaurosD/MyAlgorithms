@@ -27,6 +27,7 @@ namespace MyAlgorithms
             {
                 array1[index++] = item.GetInt32();
             }
+
             Console.WriteLine(BinarySearch.IndexOf(array1, 5)); //2
             Console.ReadKey();
         }
