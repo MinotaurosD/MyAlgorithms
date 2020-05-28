@@ -10,13 +10,18 @@ public class BinarySearch
     /// </summary>
     /// <param name="array">升序数组</param>
     /// <param name="value">目标值</param>
-    /// <returns></returns>
+    /// <returns>-1为未找到，>0为目标值所在数组的索引</returns>
     public static int IndexOf(int[] array, int value)
     {
         //低位索引
         int low = 0;
         //高位索引
         int high = array.Length - 1;
+        //如果value小于array[0]或者大于array[high]直接返回-1
+        if (value < array[0] || (high >= 0 && value > array[high]))
+        {
+            return -1;
+        }
         //当低位索引小于等于高位索引时，说明循环还未结束，继续循环；否则循环结束，未能查找到目标值
         //当数组本身长度为0时，不进循环直接返回-1
         //当数组本身长度为1时，首次进入循环middle为0，如果array[0]不等于value，则第二次循环条件不成立跳出循环
