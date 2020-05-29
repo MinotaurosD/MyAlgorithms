@@ -9,7 +9,7 @@ namespace MyAlgorithms
         public static void Main(string[] args)
         {
             if (args.Length <= 0
-                || !new FileInfo(args[0]).Exists
+                || !File.Exists(args[0])
                 )
             {
                 Console.WriteLine("no data.json.");
