@@ -73,6 +73,9 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="src\BinarySearch.cs" />
+    <Compile Include="src\LinkedList.cs" />
+    <Compile Include="test\BinarySearchTest.cs" />
+    <Compile Include="test\LinkedListTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
