@@ -5,12 +5,19 @@
 /// </summary>
 public class LinkedList<T>
 {
+    /// <summary>
+    /// 节点数据类型
+    /// </summary>
     public class Node
     {
         public T Item;
         public Node Next;
     }
 
+    /// <summary>
+    /// 在链表开始处插入节点
+    /// </summary>
+    /// <param name="item"></param>
     public void AddNodeAtBegin(T item)
     {
         if (First == null)
@@ -24,6 +31,10 @@ public class LinkedList<T>
         }
     }
 
+    /// <summary>
+    /// 在链表开始处删除节点
+    /// </summary>
+    /// <returns></returns>
     public T DeleteNodeAtBegin()
     {
         if (First != null)
@@ -36,6 +47,10 @@ public class LinkedList<T>
         return default;
     }
 
+    /// <summary>
+    /// 在链表结尾处插入节点
+    /// </summary>
+    /// <param name="item"></param>
     public void AddNodeAtEnd(T item)
     {
         if (Last == null)
@@ -50,6 +65,10 @@ public class LinkedList<T>
         }
     }
 
+    /// <summary>
+    /// 在链表结尾处删除节点
+    /// </summary>
+    /// <returns></returns>
     public T DeleteNodeAtEnd()
     {
         if (Last != null)
@@ -70,6 +89,9 @@ public class LinkedList<T>
 
     private Node first;
     private Node last;
+    /// <summary>
+    /// 首节点
+    /// </summary>
     public Node First
     {
         get => first;
@@ -82,6 +104,9 @@ public class LinkedList<T>
             }
         }
     }
+    /// <summary>
+    /// 尾结点
+    /// </summary>
     public Node Last
     {
         get => last;

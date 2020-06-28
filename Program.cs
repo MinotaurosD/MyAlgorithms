@@ -9,7 +9,7 @@ namespace MyAlgorithms
         public static void Main(string[] args)
         {
             //new BinarySearchTest().Test1(args);
-            new LinkedListTest().Test1();
+            //new LinkedListTest().Test1();
         }
     }
 }
