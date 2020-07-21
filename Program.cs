@@ -8,7 +8,7 @@ namespace MyAlgorithms
         {
             //new BinarySearchTest().Test1(args);
             //new LinkedListTest().Test1();
-            new QuickSortTest().Test1();
+            //new QuickSortTest().Test1();
         }
     }
 }
