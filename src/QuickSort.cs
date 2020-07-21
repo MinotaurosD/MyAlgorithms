@@ -5,51 +5,77 @@
 /// </summary>
 public class QuickSort
 {
-    public static void Sort(int[] array, int low, int high)
+    /// <summary>
+    /// 快速排序
+    /// </summary>
+    /// <param name="array"></param>
+    public static void Sort(int[] array)
+    {
+        Sort(array, 0, array.Length - 1);
+    }
+
+    private static void Sort(int[] array, int low, int high)
     {
         if (high <= low)
         {
             return;
         }
-        int value = array[low];
-        int result = Deparation(array, low, high, value);
+        int result = Deparation(array, low, high);
         Sort(array, low, result - 1);
         Sort(array, result + 1, high);
     }
 
-    private static int Deparation(int[] array, int low, int high, int value)
+    /// <summary>
+    /// 分割数组
+    /// </summary>
+    /// <param name="array"></param>
+    /// <param name="low"></param>
+    /// <param name="high"></param>
+    /// <returns></returns>
+    private static int Deparation(int[] array, int low, int high)
     {
+        int value = array[low];
         int slow = low + 1;
         int quick = high;
-        if (slow == quick)
+        while (slow <= quick)
         {
-            return slow + 1;
-        }
-        for (; slow < quick;)
-        {
-            if (array[slow] <= value)
+            while (array[slow] < value)
             {
                 slow++;
+                if (slow >= high)
+                {
+                    break;
+                }
             }
-            else if (array[quick] > value)
+            while (array[quick] > value)
             {
                 quick--;
+                if (quick <= low)
+                {
+                    break;
+                }
             }
-            else
+            if (slow >= quick)
             {
-                int temp1 = array[slow];
-                array[slow] = array[quick];
-                array[quick] = temp1;
+                break;
             }
+            Swap(array, slow, quick);
         }
 
-        if (slow != low + 1)
-        {
-            int temp = array[low];
-            array[low] = array[slow - 1];
-            array[slow - 1] = temp;
-        }
+        Swap(array, low, quick);
+        return quick;
+    }
 
-        return slow - 1;
+    /// <summary>
+    /// 交焕数组中的两个元素
+    /// </summary>
+    /// <param name="array"></param>
+    /// <param name="a"></param>
+    /// <param name="b"></param>
+    private static void Swap(int[] array, int a, int b)
+    {
+        int temp = array[a];
+        array[a] = array[b];
+        array[b] = temp;
     }
 }

@@ -77,6 +77,7 @@
     <Compile Include="src\QuickSort.cs" />
     <Compile Include="test\BinarySearchTest.cs" />
     <Compile Include="test\LinkedListTest.cs" />
+    <Compile Include="test\QuickSortTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
