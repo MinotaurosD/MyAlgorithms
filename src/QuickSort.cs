@@ -54,19 +54,11 @@ public class QuickSort
             while (array[left] < value)
             {
                 left++;
-                if (left >= high)
-                {
-                    break;
-                }
             }
             //找到右侧第一个小于等于value的索引
             while (array[right] > value)
             {
                 right--;
-                if (right <= low)
-                {
-                    break;
-                }
             }
             //如果左索引大于等于右索引，说明循环结束
             if (left >= right)
@@ -84,7 +76,7 @@ public class QuickSort
     }
 
     /// <summary>
-    /// 交焕数组中的两个元素
+    /// 交换数组中的两个元素
     /// </summary>
     /// <param name="array">数组</param>
     /// <param name="a">位置1</param>
